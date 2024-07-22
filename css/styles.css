@@ -69,11 +69,6 @@ section#TechStack  {
     font-size: 20px;
 }
 
-.card-body {
-    overflow:scroll; 
-    height:300px;
-}
-
 .card {
     margin-bottom: 30px;
 }
@@ -89,6 +84,8 @@ section#TechStack  {
     margin: 5px;
     display:inline-flex;
 }
+
+
 section#TechStack.card-skill{
     color: #5c5c5c !important;
 }
@@ -124,8 +121,8 @@ section#TechStack.card-skill{
     width: 150px;  /* Adjust the size as needed */
     height: 150px; /* Adjust the size as needed */
     object-fit: cover; /* Ensures the image covers the specified dimensions */
-
 }
+
 .icon-box {
     display: inline-block;
     width: 40px;
