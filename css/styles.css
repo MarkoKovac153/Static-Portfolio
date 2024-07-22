@@ -64,6 +64,16 @@ section#TechStack  {
     color: #ffffff !important;
 }
 
+.card-title{
+    color: #000000;
+    font-size: 20px;
+}
+
+.card-body {
+    overflow:scroll; 
+    height:300px;
+}
+
 .card {
     margin-bottom: 30px;
 }
