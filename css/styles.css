@@ -1,18 +1,47 @@
+/* =====================
+   Modern Dark Theme Variables
+   ===================== */
+:root {
+  --color-bg: #181a2a;
+  --color-bg-alt: #23244d;
+  --color-card: #23244d;
+  --color-card-alt: #2d2e5e;
+  --color-primary: #7c3aed;
+  --color-accent: #a259f7;
+  --color-text: #f3f3fa;
+  --color-muted: #b3b3c6;
+  --color-success: #4ade80;
+  --color-danger: #f87171;
+  --color-border: #35376b;
+  --color-navbar: #23244d;
+  --color-navbar-hover: #7c3aed;
+  --color-footer: #181a2a;
+  --transition-main: 0.4s cubic-bezier(0.4,0,0.2,1);
+  --font-main: 'Poppins', 'Segoe UI', Arial, sans-serif;
+}
+
 body {
     padding-top: 30px;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-main);
+    transition: background var(--transition-main), color var(--transition-main);
 }
 
 section {
     padding: 30px 0;
     margin-bottom: 40px;
-    font-family:  monospace;
+    font-family: var(--font-main);
+    animation: fadeInUp 1s ease;
 }
 
 section#home {
-    background: #cccccc;
-    padding: 20px ;
+    background: var(--color-card);
+    padding: 20px;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px 0 rgba(60, 40, 120, 0.12);
+    transition: background var(--transition-main);
 }
 
 #home .row {
@@ -21,74 +50,126 @@ section#home {
 
 #home h1, #home p {
     margin-left: 180px;
-    
 }
 
 section#about {
-    background: #5c5c5c;
+    background: var(--color-card-alt);
     padding: 20px;
-    color: white;
-    border-radius: 10px;
+    color: var(--color-text);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px 0 rgba(60, 40, 120, 0.10);
 }
 
 section#education{
-    background: #cccccc;
+    background: var(--color-card);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
 }
 
 section#experience{
-    background: #5c5c5c;
+    background: var(--color-card-alt);
     padding: 20px;
-    color: white;
-    border-radius: 10px;
+    color: var(--color-text);
+    border-radius: 16px;
 }
 
 section#projects {
-    background: #cccccc;
+    background: var(--color-card);
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 16px;
+}
+
+section#hobbies {
+  background: var(--color-card);
+  padding: 20px;
+  border-radius: 16px;
+  color: var(--color-text);
+}
+section#hobbies ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+section#hobbies li {
+  color: var(--color-text);
+  margin-bottom: 8px;
+  padding-left: 20px;
+  position: relative;
+}
+section#hobbies li:before {
+  content: "•";
+  color: var(--color-accent);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
 }
 
 .finished {
-    color: green;
+    color: var(--color-success);
+    font-size: 1.2em;
+    animation: popIn 0.7s;
 }
 .notFinished {
-    color: red;
+    color: var(--color-danger);
+    font-size: 1.2em;
+    animation: popIn 0.7s;
 }
 
 section#TechStack  {
-    background: #5c5c5c;
-    border-radius: 10px;
+    background: var(--color-card-alt);
+    border-radius: 16px;
     padding: 20px;
-    color: #ffffff !important;
+    color: var(--color-text) !important;
 }
 
 .card-title{
-    color: #000000;
-    font-size: 20px;
+    color: var(--color-accent);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition: color var(--transition-main);
+}
+.card-title:hover {
+    color: var(--color-primary);
+    text-decoration: underline;
 }
 
 .card {
     margin-bottom: 30px;
+    background: var(--color-card-alt);
+    border-radius: 24px !important;
+    box-shadow: 0 2px 12px 0 rgba(60, 40, 120, 0.10);
+    border: none;
+    transition: transform var(--transition-main), box-shadow var(--transition-main);
+    animation: fadeInUp 1s;
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(124, 58, 237, 0.18);
+}
+.card-img-top {
+  border-top-left-radius: 24px !important;
+  border-top-right-radius: 24px !important;
 }
 
 .card-skill {
-    color: #5c5c5c;
-    font-size: 10;
-    background-color: #cccccc;
+    color: var(--color-bg-alt);
+    font-size: 0.95em;
+    background-color: var(--color-accent);
     border-radius: 20px;
     width: fit-content; 
     height: fit-content;
-    padding:5px;
-    margin: 5px;
-    display:inline-flex;
+    padding: 5px 12px;
+    margin: 5px 6px 5px 0;
+    display: inline-flex;
+    font-weight: 500;
+    box-shadow: 0 1px 4px 0 rgba(124, 58, 237, 0.10);
+    transition: background var(--transition-main), color var(--transition-main);
+}
+.card-skill:hover {
+    background: var(--color-primary);
+    color: var(--color-text);
 }
 
-
-section#TechStack.card-skill{
-    color: #5c5c5c !important;
-}
 .container {
     margin-bottom: 60px;
 }
@@ -103,52 +184,166 @@ section#TechStack.card-skill{
 }
 
 .navbar .nav-link {
-    color: white !important;
-    border-radius: 3px;
-
-    background-color: #5c5c5c;
-    transition: background-color 0.3s, border-color 0.3s;
+    color: var(--color-text) !important;
+    border-radius: 6px;
+    background-color: var(--color-navbar);
+    transition: background-color var(--transition-main), color var(--transition-main);
 }
 
 .navbar .nav-link:hover {
-    background-color: black;
-    border: 10px;
+    background-color: var(--color-navbar-hover);
+    color: var(--color-bg);
 } 
 
 /* Circular Image */
 .img-circle {
-    border-radius: 10%;
-    width: 150px;  /* Adjust the size as needed */
-    height: 150px; /* Adjust the size as needed */
-    object-fit: cover; /* Ensures the image covers the specified dimensions */
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 4px solid var(--color-primary);
+    box-shadow: 0 2px 12px 0 rgba(124, 58, 237, 0.15);
+    transition: border var(--transition-main), box-shadow var(--transition-main);
+    animation: fadeIn 1.2s;
 }
 
 .icon-box {
-    display: inline-block;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    border: 1px solid #000000;
-    border-radius: 4px;
-    margin: 5px;
-    transition: background-color 0.3s, border-color 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1.5px solid var(--color-accent);
+  border-radius: 8px;
+  margin: 5px;
+  background: var(--color-footer);
+  transition: background var(--transition-main), border-color var(--transition-main), box-shadow var(--transition-main);
+  box-shadow: 0 1px 6px 0 rgba(124, 58, 237, 0.10);
 }
-
 .icon-box:hover {
-    background-color: #000000;
-    fill: #ffffff;
+    background-color: var(--color-primary);
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px 0 rgba(124, 58, 237, 0.18);
+}
+.icon-box:hover svg {
+    fill: var(--color-text);
 }
 
-.icon-box:hover svg {
-    fill: #ffffff;
+.footer {
+    background: var(--color-footer);
+    padding: 24px 0 0 0;
+    border-top: 1.5px solid var(--color-border);
 }
 .footer .text-muted {
-    color: rgb(0, 0, 0) !important;
+    color: var(--color-muted) !important;
 }
-
 .footer svg {
     width: 24px;
     height: 24px;
-    transition: fill 0.3s;
+    transition: fill var(--transition-main);
+    fill: var(--color-text) !important;
+}
+/* Remove color change on hover, keep pop-out */
+.footer .icon-box:hover svg {
+    fill: var(--color-text) !important;
+}
+.footer .icon-box {
+  transition: transform 0.12s ease;
+}
+.footer .icon-box:hover {
+  transform: scale(1.18);
+  box-shadow: none;
+  background: var(--color-footer);
+  border-color: var(--color-accent);
+}
+
+/* Force dark theme and light text for all card content and links */
+.card, .card-body {
+  background: var(--color-card-alt) !important;
+  color: var(--color-text) !important;
+}
+.card-title, .card-text, .card-body, .card-skills, .card-skill {
+  color: var(--color-text) !important;
+}
+/* Make all links light and add hover effect */
+a, a:visited {
+  color: var(--color-accent) !important;
+  transition: color var(--transition-main);
+}
+a:hover, a:focus {
+  color: var(--color-primary) !important;
+  text-decoration: underline;
+}
+
+/* Force all headings to be white for readability */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-text) !important;
+}
+
+/* Ensure the entire page background is dark, not white or transparent */
+html, body {
+  background: var(--color-bg) !important;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  0% { transform: scale(0.7); opacity: 0; }
+  80% { transform: scale(1.1); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* Responsive: Center home section content on mobile */
+@media (max-width: 768px) {
+  section#home .row {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center;
+  }
+  section#home h1, section#home p {
+    margin-left: 0 !important;
+    text-align: center;
+  }
+  section#home .col-md-8,
+  section#home .col-md-4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 12px;
+  }
+  section#home .img-circle {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.footer .container.text-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+}
+.footer .icon-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-direction: row;
+  margin-bottom: 8px;
 }
